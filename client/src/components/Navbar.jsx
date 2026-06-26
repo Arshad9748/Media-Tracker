@@ -1,22 +1,16 @@
 import React from 'react'
-import Anime from './Anime'
-import Books from './Books'
-import CreateAccount from './CreateAccount'
+import SignUp from './SignUp'
 import SignIn from './SignIn'
-import Games from './Games'
-import Movies from './Movies'
-import TvSeries from './TvSeries'
+
 
 const Navbar = () => {
   return (
     <div>
-      <Anime />
-      <Books />
-      <CreateAccount />
-      <SignIn />
-      <Games />
-      <Movies />
-      <TvSeries />
+      <header className='flex flex-row items-center justify-between p-4 bg-gray-800 text-white'>
+        <h1 className='text-lg font-bold'>Wilhelm Tracker</h1>
+      <SignUp className='bg-yellow-500 text-white' />
+      <SignIn className='bg-yellow-500 text-white'/>
+      </header>
     </div>
   )
 }
