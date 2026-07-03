@@ -8,15 +8,15 @@ const mediaCard = [
   },
   {
     key:2,
-    title: "Dune",
+    title: "So I'm a Spider, So What? The Daily Lives of the Kumoko Sisters",
     type: "Book",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Dune_by_Frank_Herbert_first_edition_cover.jpg/500px-Dune_by_Frank_Herbert_first_edition_cover.jpg"
+    image: "./images/Spider.jpg"
       
   },
   {
     key: 3,
     title: "Victorious",
-    type: "TV Show",
+    type: "Tv Show",
     image: "https://upload.wikimedia.org/wikipedia/en/6/6e/Victorious_Cast_-_Victorious_%28Music_from_the_Hit_TV_Show%29.png"
   },
   {
@@ -35,16 +35,16 @@ const mediaCard = [
   },
   {
     key:6,
-    title: "1984",
+    title: "I Shall Survive Using Potions!",
     type: "Book",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/1984_first_edition_cover.jpg"
+    image: "./images/Potion.jpg"
 
   },
   {
     key:7,
     title: "Zoey 101",
-    type: "TV Show",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Zoey101.png/500px-Zoey101.png"
+    type: "Tv Show",
+    image: "./images/Zoey.jpg"
 
   },
   {
@@ -56,7 +56,7 @@ const mediaCard = [
   },
   {
     key:9,
-    title: "Grave of the Fireflies",
+    title: "Grave of the Fireflies, Anything",
     type: "Movie",
     image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"
 
@@ -71,8 +71,8 @@ const mediaCard = [
   {
     key:11,
     title: "Drake and Josh",
-    type: "TV Show",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Drake_%26_Josh_Nickelodeon_Logo.svg/500px-Drake_%26_Josh_Nickelodeon_Logo.svg.png"
+    type: "Tv Show",
+    image: "./images/Drake.jpg"
 
   },
   {
@@ -98,19 +98,69 @@ const mediaCard = [
   },
   {
     key:15,
-    title: "",
-    type: "",
-    image: ""
+    title: "That's So Raven",
+    type: "Tv Show",
+    image: "./images/Raven.jpg"
 
   },
   {
     key:16,
-    title: "",
-    type: "",
-    image: ""
+    title: "Fallout: New Vegas",
+    type: "Game",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/43/Free_depiction_of_the_Fallout_New_Vegas_Xbox_360_box_art_%28cropped%29.png"
 
   },
+  {
+    key:17,
+    title: "Mob Psycho 100",
+    type: "Anime",
+    image: "./images/Mob.jpg"
+  },
+  {
+    key:18,
+    title: "Villainess Level 99: I May Be the Hidden Boss but I'm Not the Demon Lord",
+    type: "Anime",
+    image: "./images/Villainess.jpg"
+  },
+  {
+    key:19,
+    title: "Nichijou: My Ordinary Life",
+    type: "Anime",
+    image: "./images/Nichijou.jpg"
+  },
+  {
+    key:20,
+    title: "Azumanga Daioh",
+    type: "Anime",
+    image: "./images/Azumanga.jpg"
+  },
+  {
+    key:21,
+    title: "Nichijou: My Ordinary Life",
+    type: "Anything",
+    image: "./images/Nichijou.jpg"
+  },
+  {
+    key:22,
+    title: "Fallout: New Vegas",
+    type: "Anything",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/43/Free_depiction_of_the_Fallout_New_Vegas_Xbox_360_box_art_%28cropped%29.png"
 
+  },
+  {
+    key:23,
+    title: "Zoey 101",
+    type: "Anything",
+    image: "./images/Zoey.jpg"
+
+  },
+  {
+    key:24,
+    title: "Grave of the Fireflies, Anything",
+    type: "Anything",
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"
+
+  },
 
 
 ]

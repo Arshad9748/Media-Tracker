@@ -1,1 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sniglet:wght@400;800&display=swap');
 @import "tailwindcss";
+
+@keyframes breathe {
+  0%,100% {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+  25% {
+    transform: translate(2px, -6px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0, -10px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-2px, -6px) rotate(1deg);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.sniglet-regular {
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sniglet-regular {
+  font-family: "Sniglet", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.plus-jakarta-sans-bold {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
