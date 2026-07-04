@@ -2,7 +2,6 @@ import {useState,useEffect} from 'react'
 import raectDom from 'react-dom'
 import Card from './Card'
 import mediaCard from '../data/card'
-import { TypeAnimation } from 'react-type-animation';
 import '../App.css'
 import TextAnimation from './TextAnimation';
 
@@ -24,10 +23,13 @@ const Hero = () => {
   const slicedFilteredCards = filteredCards.slice(0,batchSize)
 
   return (
-    <div>
-      <h1 className='text-4x1  text-left mt-10'>Never loose track of <TypeAnimation text = {media[currentMedia].label}  /></h1>
+    <div className = 'flex justify-between items-start'>
+      <div>
+         <h1 className='font-jakarta font-medium text-7xl text-left pt-55 pl-8 tracking-[0.1em] '>Never lose track of <TextAnimation key={currentMedia} text = {media[currentMedia].label}  /></h1>
+      </div>
+      <div className = 'mt-10'>
       <Card cards = {slicedFilteredCards} />
-      
+      </div>
     </div>
   )
 }

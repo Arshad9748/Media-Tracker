@@ -1,22 +1,53 @@
 import {useState,useEffect} from 'react'
-import Hero from './Hero'
 
-const TextAnimation = (text) => {
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setisdeleting] = useState(false);
+
+const TextAnimation = ({text}) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
 
    useEffect( ()=>{
     const interval = setInterval(()=>{
-      displayText.slice(0, text.length).map((char,index) => {
-        setDIsplayText((prev) => prev + char)
+      setCurrentIndex((prevIndex)=> {
+        if (isDeleting) {
+          if (prevIndex > 0){
+            return prevIndex - 1   
+          }
+          if(prevIndex === 0){
+             setIsDeleting(false)
+             return prevIndex
+          }
+        } 
+        
+        else {
+          if(prevIndex < text.length){
+            return prevIndex + 1}
+         
+            return prevIndex
+          
+        }
       })
+    }, 160)
+    return () => clearInterval(interval)
+   }, [text, isDeleting])
 
+   useEffect(() => {
+    let timeout 
+    if (currentIndex === text.length && !isDeleting) {
+    timeout = setTimeout(() => setIsDeleting(true), 4000)
+     }
+     return () => clearTimeout(timeout)
+   },[currentIndex, isDeleting, text])
 
-    }, 100)
-   }, [])
+   useEffect(() => {
+  setCurrentIndex(0);
+  setIsDeleting(false)
+}, [text])
     
   return (
-    
+    <span>{text.slice(0, currentIndex)}
+     <span className="animate-pulse">|</span>
+    </span>
+   
   )
 }
 
