@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Landingpage = () => {
     return (
-        <div>
+        <div className='bg-pink-100 pt-4'>
             <Navbar />
             <Hero />
             <Footer />

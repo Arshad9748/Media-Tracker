@@ -3,6 +3,11 @@
 @theme {
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-sniglet: "Sniglet", system-ui;
+  --color-purple: #C5B3D3;
+  --color-pink:  #F5CBCB;
+  --color-pink-50: #FFE2E2;
+  --color-pink-100: #FBEFEF;
+
 }
 @keyframes breathe {
   0%,100% {
