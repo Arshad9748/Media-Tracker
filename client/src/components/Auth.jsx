@@ -1,11 +1,14 @@
 import {useEffect,useState} from 'react'
-import {useLocation,Link} from 'react-router'
+import {useLocation,Link,useNavigate} from 'react-router'
+import axios from 'axios'
+
 
 const Auth = () => {
 
 const location = useLocation()
 const[error,setError] = useState('')
 const logIn = location.pathname === '/login'
+const navigate = useNavigate()
 
 const handleSubmit  = async (e) => { 
 
@@ -14,7 +17,7 @@ const handleSubmit  = async (e) => {
 
 
   const formData = new FormData(e.target)
-  const name = formData.get("userName")
+  const userName = formData.get("userName")
   const email = formData.get("email")
   const password = formData.get("password")
   const confirmPassword = formData.get("confirmPassword")
@@ -23,12 +26,20 @@ const handleSubmit  = async (e) => {
 if (!logIn && password !== confirmPassword ){
   setError('Password do not match.')
   return }
-
-if(logIn){
-  console.log('submit to login',{email,password})
+if (!email || !password ){
+  setError('Please fill in all required fields.')
+  return
 }
-else{
-  console.log('submit to signup',{userName,email,password})
+try{
+  const url = logIn ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/register'
+  const body =logIn ? {email,password} : {userName,email,password}
+  const res = await axios.post(url,body)
+  localStorage.setItem('token', res.data.token)
+  localStorage.setItem('user', JSON.stringify(res.data.user))
+  navigate ('/dashboard')
+} 
+catch(err){
+  setError(err.response?.data?.message || 'Something went wrong')
 }
 }
 
@@ -37,8 +48,8 @@ else{
       <div className='bg-purple-400 p-20 rounded-2xl shadow-lg max-w-md w-full  '>
         <form className='flex flex-col gap-12' onSubmit={handleSubmit}>
          <div className=' relative mb-6 flex  border border-pink-50 rounded-2xl '> 
-          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-neutral-600" : "text-white"}`}> Log In</button>
-          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-white" : "text-neutral-600"}`}> Sign Up</button> 
+          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-neutral-600" : "text-white"}`} type= 'button'> Log In</button>
+          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-white" : "text-neutral-600"}`} type='button'> Sign Up</button> 
              <div
             className={`absolute top-0 h-full w-1/2 bg-pink-50 rounded-2xl transition-all duration-300 ${
               logIn ? "left-0" : "left-1/2"

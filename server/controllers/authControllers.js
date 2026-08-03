@@ -27,17 +27,17 @@ export const register = async (req, res) =>{
 }
 
 export const login = async (req, res) => {
-    const (email, password) = req.body
+    const{email, password} = req.body
 
     try{
         const user = await pool.query('SELECT * FROM users WHERE email =$1', [email])
 
-        if(users.rows.length === 0){
+        if(user.rows.length === 0){
             return res.status(400).json({message: 'Invalid credentials'})
         }
         const validPassword = await bcrypt.compare(password, user.rows[0].password)
 
-        if(!validPAssword){
+        if(!validPassword){
             return res.status(400).json({message: 'Invalid credentials'})
         }
 

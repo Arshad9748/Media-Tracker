@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 import SignUp from './Auth'
-import SignIn from './SignIn'
+
 
 
 const Navbar = () => {
