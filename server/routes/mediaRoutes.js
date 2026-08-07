@@ -4,11 +4,11 @@ import {searchAnime,searchBook,searchGame,searchMovie,searchTVShow} from '../con
 
 const router = express.Router()
 
-router.get('/animes',searchAnime)
-router.get('/books', searchBook)
-router.post('/games', searchGame)
-router.get('/movies', searchMovie)
-router.get('/tv-shows', searchTVShow)
+router.get('/anime',searchAnime)
+router.get('/book', searchBook)
+router.get('/game', searchGame)
+router.get('/movie', searchMovie)
+router.get('/tv-show', searchTVShow)
 
 export default router
 
