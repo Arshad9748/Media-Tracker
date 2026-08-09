@@ -3,7 +3,7 @@ import React from 'react'
 // Saved item in 'My List
 const SavedMediaCard = ({item, onStatusChange, onRemove}) => {
   return (
-        <div className="border border-slate-800  rounded-xl overflow-hidden bg-slate-900">
+        <div className="border border-slate-800  rounded-xl overflow-hidden bg-slate-900 transition-transform duration-300 hover:scale-110">
             <img src={item.coverImage} alt={item.title} className="w-full h-[220px] object-cover" />
             <div className="p-3 flex-1 flex flex-col justify-between gap-2">
                 <h3 className="text-xs font-bold text-center turncate">{item.title}</h3>

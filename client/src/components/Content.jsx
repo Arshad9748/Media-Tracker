@@ -4,7 +4,7 @@ const Content = () => {
   return (
 <div>
     {/* App Preview Section */}
-<div className=" py-20 px-8">
+<div className=" py-20 px-8 ">
   <div className="max-w-6xl mx-auto">
     <h2 className="text-4xl font-sniglet text-white text-center mb-4">
       See it in action
@@ -14,7 +14,7 @@ const Content = () => {
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform duration-300 hover:scale-102">
         <img src="/images/dashboard.png" alt="Dashboard overview" className="w-full object-cover"/>
         <div className="bg-slate-900 p-4">
           <p className="text-white font-bold text-sm">Dashboard</p>
@@ -22,7 +22,7 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform duration-300 hover:scale-102">
         <img src="/images/search.png" alt="Search" className="w-full object-cover"/>
         <div className="bg-slate-900 p-4">
           <p className="text-white font-bold text-sm">Search</p>
@@ -30,7 +30,7 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
+      <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl transition-transform duration-300 hover:scale-102">
         <img src="/images/mylist.png" alt="My List" className="w-full object-cover"/>
         <div className="bg-slate-900 p-4">
           <p className="text-white font-bold text-sm">My List</p>

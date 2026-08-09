@@ -13,10 +13,10 @@ const Navbar = () => {
      
     <div className='flex gap-2'>
 
-      <Link to='/signup'>
+      <Link to='/signup' className='hover:text-teal'>
         Sign Up
       </Link>
-      <Link to='/login' >
+      <Link to='/login' className='hover:text-teal'>
         Log In
       </Link>
       

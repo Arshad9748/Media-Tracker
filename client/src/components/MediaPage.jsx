@@ -73,10 +73,10 @@ const MediaPage = ({title, mediaType, placeholder}) => {
         </div>
         <div className="flex bg-slate-900 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto">
         <button
-          onClick={() => setActiveTab('search')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'search' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-white'}`}>
+          onClick={() => setActiveTab('search')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'search' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
           Search
         </button>
-        <button onClick={() => setActiveTab('mylist')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'mylist' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-white'}`}>
+        <button onClick={() => setActiveTab('mylist')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'mylist' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
           My List
           <span className="bg-slate-800 text-teal text-xs px-2 py-0.5 rounded-full">
             {savedList.length}

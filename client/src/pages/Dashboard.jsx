@@ -64,7 +64,7 @@ const Dashboard = () => {
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {recent.map(item => (
-              <div key={item.id} className="rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+              <div key={item.id} className="rounded-xl overflow-hidden border border-slate-800 bg-slate-900 transition-transform duration-300 hover:scale-110">
                 <img src={item.cover_image} alt={item.title} className="w-full h-[180px] object-cover"/>
                 <div className="p-2">
                   <p className="text-xs font-bold truncate">{item.title}</p>
@@ -84,7 +84,7 @@ const Dashboard = () => {
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {inProgress.map(item => (
-              <div key={item.id} className="rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+              <div key={item.id} className="rounded-xl overflow-hidden border border-slate-800 bg-slate-900 transition-transform duration-300 hover:scale-105">
                 <img src={item.cover_image} alt={item.title} className="w-full h-[180px] object-cover"/>
                 <div className="p-2">
                   <p className="text-xs font-bold truncate">{item.title}</p>

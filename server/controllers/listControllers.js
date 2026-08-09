@@ -4,9 +4,6 @@ export const addToList = async (req, res) => {
     const {media_id, media_type, title, cover_image, status} = req.body
     const user_id = req.user.id
 
-      console.log('Add to list body:', req.body)
-  console.log('User ID:', user_id)
-
     try{
         const result = await pool.query('INSERT INTO user_media (user_id, media_id, media_type, title, cover_image, status) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [user_id,media_id,media_type,title,cover_image,status || 'Plan to Watch'])
         res.status(201).json(result.rows[0])
