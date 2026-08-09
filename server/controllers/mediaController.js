@@ -84,7 +84,7 @@ export const searchTVShow = async (req,res) => {
         const {query} = req.query
         if (!query) return res.json([])
         const response = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${process.env.TMDB_API_KEY}&query=${encodeURIComponent(query)}`)
-        const formattedData = response.data.results.map(item => createMediaItem(item.id, 'tv',  item.name, item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'https://placehold.co/500x750/png?text=No+Poster+Found'))
+        const formattedData = response.data.results.map(item => createMediaItem(item.id, 'tv-show',  item.name, item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'https://placehold.co/500x750/png?text=No+Poster+Found'))
         return res.json(formattedData)
     }
     catch(err){

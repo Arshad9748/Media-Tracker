@@ -1,9 +1,6 @@
-import React from 'react'
+import MediaPage from '../components/MediaPage'
 
 const Movies = () => {
-  return (
-    <div>Movies</div>
-  )
+  return <MediaPage title="Movies" mediaType="movie" placeholder="Search for a movie (e.g. Annie)..." />
 }
-
 export default Movies

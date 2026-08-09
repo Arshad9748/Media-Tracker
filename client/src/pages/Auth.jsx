@@ -44,25 +44,25 @@ catch(err){
 }
 
   return (
-    <div className='min-h-screen w-full flex items-center justify-center font-sniglet bg-pink-100 text-white'>
-      <div className='bg-purple-400 p-20 rounded-2xl shadow-lg max-w-md w-full  '>
+    <div className='min-h-screen w-full flex items-center justify-center font-sniglet bg-gray-950 text-white'>
+      <div className='bg-slate-900 p-20 rounded-2xl shadow-lg max-w-md w-full  '>
         <form className='flex flex-col gap-12' onSubmit={handleSubmit}>
-         <div className=' relative mb-6 flex  border border-pink-50 rounded-2xl '> 
-          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-neutral-600" : "text-white"}`} type= 'button'> Log In</button>
-          <button className={`w-1/2 py-4 z-10 transition-colors ${logIn ? "text-white" : "text-neutral-600"}`} type='button'> Sign Up</button> 
+         <div className=' relative mb-6 flex  border border-teal rounded-2xl '> 
+          <button className={`w-1/2 py-4 z-10 transition-colors  ${logIn ? "text-neutral-800" : "text-white hover:text-teal"}`} type= 'button' onClick={() => navigate('/login')}> Log In</button>
+          <button className={`w-1/2 py-4 z-10 transition-colors  ${logIn ? "text-white hover:text-teal" : "text-neutral-800"}`} type='button' onClick={() => navigate('/signup')}> Sign Up</button> 
              <div
-            className={`absolute top-0 h-full w-1/2 bg-pink-50 rounded-2xl transition-all duration-300 ${
+            className={`absolute top-0 h-full w-1/2 bg-teal rounded-2xl transition-all duration-300 ${
               logIn ? "left-0" : "left-1/2"
             }`}
           ></div>
           </div>
         {!logIn &&
-        <input className='border-b-2  border-pink-50 focus:border-pink-50 outline-none' type='text' name='userName' placeholder='User Name' />}
-        <input  className='border-b-2  border-pink-50 focus:border-pink-50 outline-none' type='email'name='email' placeholder='Email' />
-        <input  className='border-b-2  border-pink-50 focus:border-pink-50 outline-none' type='password' name='password' placeholder='Password' />
+        <input className='border-b-2  border-teal focus:border-teal outline-none' type='text' name='userName' placeholder='User Name' />}
+        <input  className='border-b-2  border-teal focus:border-teal outline-none' type='email'name='email' placeholder='Email' />
+        <input  className='border-b-2  border-teal focus:border-teal outline-none' type='password' name='password' placeholder='Password' />
         {!logIn &&
-        <input className='border-b-2  border-pink-50 focus:border-pink-50 outline-none' type='password'name='confirmPassword' placeholder='Confirm Password' />}
-        <button  className='rounded-4xl shadow-lg bg-pink-50 mx-auto py-4 px-8 text-neutral-600'  type='submit'>{logIn ? 'Log In' : 'Sign Up'}</button>
+        <input className='border-b-2  border-teal focus:border-teal outline-none' type='password'name='confirmPassword' placeholder='Confirm Password' />}
+        <button  className='rounded-4xl shadow-lg bg-teal mx-auto py-4 px-8 text-neutral-800'  type='submit'>{logIn ? 'Log In' : 'Sign Up'}</button>
         <p>
           {logIn ? "Don't have an account? " : "Already have an account? "}
           <Link to={logIn ? '/signup' : '/login'} >
