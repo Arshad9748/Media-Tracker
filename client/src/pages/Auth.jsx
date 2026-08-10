@@ -31,7 +31,8 @@ if (!email || !password ){
   return
 }
 try{
-  const url = logIn ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/register'
+  const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  const url = logIn ? `${BASE_URL}/api/auth/login` : `${BASE_URL}/api/auth/register`
   const body =logIn ? {email,password} : {userName,email,password}
   const res = await axios.post(url,body)
   localStorage.setItem('token', res.data.token)
