@@ -23,11 +23,11 @@ const Hero = () => {
   const slicedFilteredCards = filteredCards.slice(0,batchSize)
 
   return (
-    <div className = 'flex justify-between items-start mt-16 text-white mb-14'>
-      <div>
-         <h1 className='font-jakarta font-medium text-7xl text-left  pt-55 pl-8 tracking-[0.1em] '>Never lose track of <TextAnimation key={currentMedia} text = {media[currentMedia].label}  /></h1>
+    <div className = 'flex flex-col md:flex-row justify-between items-start sm:mt-16 text-white mb-14'>
+      <div className='w-full md:w-1/2'>
+         <h1 className='font-jakarta font-medium text-xl sm:text-4xl lg:text-5xl  text-center md:text-left  pt-20 md:pt-55 px-4 md:pl-8 tracking-[0.1em] '>Never lose track of <TextAnimation key={currentMedia} text = {media[currentMedia].label}  /></h1>
       </div>
-      <div className = 'mt-10'>
+      <div className = 'mt-10 w-full md:w-1/2 flex justify-center md:justify-end md:pr-10'>
       <Card cards = {slicedFilteredCards} />
       </div>
     </div>

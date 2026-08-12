@@ -3,11 +3,9 @@ import Sidebar from './Sidebar'
 
 const Layout = ({children}) => {
   return (
-    <div className='flex min-h-screen items-start bg-gray-900'>
-      <aside className='sticky  h-fit top-0  w-64 shrink-0 '>
+    <div className='flex min-h-screen  bg-gray-900 text-white'>
         <Sidebar/>
-        </aside>
-        <main className='flex-1'>
+        <main className='flex-1 p-4 pt-18 md:pt-4 overflow-x-hidden'>
             {children}
         </main>
     </div>

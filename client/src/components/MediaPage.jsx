@@ -64,19 +64,19 @@ const MediaPage = ({title, mediaType, placeholder}) => {
   }
 
   return(
-    <div className="p-8 md:p-12 font-jakarta text-white max-w-7xl mx-auto">
+    <div className="p-4 sm:p-6 md:p-10 font-jakarta text-white max-w-7xl mx-auto">
       {/* Header & Tab Switcher */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 md:mb-8">
         <div>
-          <h1 className="text-5xl font-sniglet tracking-wide">{title}</h1>
-          <p className="text-slate-400 text-sm mt-1">Search and manage your {title.toLowerCase()} collection</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-sniglet tracking-wide">{title}</h1>
+          <p className="text-slate-400 text-xs sm:text-sm mt-1">Search and manage your {title.toLowerCase()} collection</p>
         </div>
-        <div className="flex bg-slate-900 p-1.5 rounded-xl border border-slate-800 self-start md:self-auto">
+        <div className="flex bg-slate-900 p-1.5 rounded-xl border border-slate-800 self-start sm:self-auto w-full sm:w-autoflex bg-slate-900 p-1.5 rounded-xl border border-slate-800 self-start sm:self-auto w-full sm:w-auto">
         <button
-          onClick={() => setActiveTab('search')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'search' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
+          onClick={() => setActiveTab('search')} className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all ${activeTab === 'search' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
           Search
         </button>
-        <button onClick={() => setActiveTab('mylist')} className={`px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === 'mylist' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
+        <button onClick={() => setActiveTab('mylist')} className={`flex-1 sm:flex-initial px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${activeTab === 'mylist' ? 'bg-teal text-black shadow-lg' : 'text-slate-400 hover:text-teal'}`}>
           My List
           <span className="bg-slate-800 text-teal text-xs px-2 py-0.5 rounded-full">
             {savedList.length}
@@ -119,7 +119,7 @@ const MediaPage = ({title, mediaType, placeholder}) => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
             {savedList.map((item) => (
               <SavedMediaCard
                 key={item.id}
