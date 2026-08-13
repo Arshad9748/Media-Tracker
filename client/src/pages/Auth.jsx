@@ -8,6 +8,7 @@ const Auth = () => {
 const location = useLocation()
 const[error,setError] = useState('')
 const logIn = location.pathname === '/login'
+const [loading, setLoading] = useState(false)
 const navigate = useNavigate()
 
 const handleSubmit  = async (e) => { 
@@ -21,6 +22,7 @@ const handleSubmit  = async (e) => {
   const email = formData.get("email")
   const password = formData.get("password")
   const confirmPassword = formData.get("confirmPassword")
+  
  
 
 if (!logIn && password !== confirmPassword ){
@@ -31,17 +33,21 @@ if (!email || !password ){
   return
 }
 try{
+  setLoading(true)
   const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
   const url = logIn ? `${BASE_URL}/api/auth/login` : `${BASE_URL}/api/auth/register`
   const body =logIn ? {email,password} : {userName,email,password}
   const res = await axios.post(url,body)
   localStorage.setItem('token', res.data.token)
   localStorage.setItem('user', JSON.stringify(res.data.user))
+  setLoading(false)
   navigate ('/dashboard')
 } 
 catch(err){
+  setLoading(false)
   setError(err.response?.data?.message || 'Something went wrong')
 }
+
 }
 
   return (
@@ -57,13 +63,18 @@ catch(err){
             }`}
           ></div>
           </div>
+        {error && (
+          <div className="bg-red-500/20 border border-red-500/50 text-red-400 text-sm px-4 py-3 rounded-lg">
+              {error}
+          </div>
+            )}
         {!logIn &&
         <input className='border-b-2  border-teal focus:border-teal outline-none' type='text' name='userName' placeholder='User Name' />}
         <input  className='border-b-2  border-teal focus:border-teal outline-none' type='email'name='email' placeholder='Email' />
         <input  className='border-b-2  border-teal focus:border-teal outline-none' type='password' name='password' placeholder='Password' />
         {!logIn &&
         <input className='border-b-2  border-teal focus:border-teal outline-none' type='password'name='confirmPassword' placeholder='Confirm Password' />}
-        <button  className='rounded-4xl shadow-lg bg-teal mx-auto py-3 px-6 sm:py-4 sm:px-8 text-neutral-800'  type='submit'>{logIn ? 'Log In' : 'Sign Up'}</button>
+        <button  className= {`rounded-4xl shadow-lg bg-teal mx-auto py-3 px-6 sm:py-4 sm:px-8 text-neutral-800 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'}`}  type='submit' disabled={loading}>{loading ? 'Please wait...' : logIn ? 'Log In' : 'Sign Up'}</button>
         <p className='text-sm sm:text:base'>
           {logIn ? "Don't have an account? " : "Already have an account? "}
           <Link  to={logIn ? '/signup' : '/login'} className='hover:text-teal' >
