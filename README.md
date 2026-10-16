@@ -4,7 +4,9 @@ A simple, private media tracker for movies, TV shows, anime, games and books, al
 
 **Live demo:** https://wilhelm-tracker.vercel.app
 
-![Wilhelm Tracker screenshot](/var/home/AHMED/Disk/Projects/MediaTracker/docs/wilhelmLanding.png, /var/home/AHMED/Disk/Projects/MediaTracker/docs/wilhelmSearch.png, /var/home/AHMED/Disk/Projects/MediaTracker/docs/wilhelmList.png )
+![Wilhelm Tracker Landing Page](docs/wilhelmLanding.png)
+![Wilhelm Tracker Search Page](docs/wilhelmSearch.png)
+![Wilhelm Tracker List Page](docs/wilhelmList.png)
 
 ## Why I built it
 
